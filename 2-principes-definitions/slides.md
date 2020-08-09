@@ -2,12 +2,13 @@
 %author: xavki
 
 
-# TRAEFIK : Principes défitions
+# TRAEFIK : Principes & Définitions
 
 
 <br>
 * évolution de 1.7 à version 2.0
 
+https://docs.traefik.io/
 https://docs.traefik.io/v1.7/basics/
 
 <br>
@@ -25,6 +26,10 @@ https://docs.traefik.io/v1.7/basics/
 		* auto découvrir les services qu'il doit servir (sans intervention)
 				* très utile pour docker (variation des ip)
 
+------------------------------------------------------------------------------
+
+# TRAEFIK : Principes & Définitions
+
 <br>
 STATIC CONFIGURATION : (démarrage > peu modifiée)
 
@@ -41,6 +46,10 @@ STATIC CONFIGURATION : (démarrage > peu modifiée)
 		* doc :https://docs.traefik.io/providers/overview/
 		* docker, kubernetes, consul...
 
+------------------------------------------------------------------------------
+
+# TRAEFIK : Principes & Définitions
+
 <br>
 DYNAMIC CONFIGURATION : (pendant le process > partie dynamique)
 
@@ -53,7 +62,6 @@ DYNAMIC CONFIGURATION : (pendant le process > partie dynamique)
 			* ou les deux
 			* path/host > http/https
 			* SNI (serveur name indication / TLS)
-
 
 <br>
 * Services

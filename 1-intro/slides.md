@@ -8,7 +8,10 @@
 <br>
 * reverse proxy
 
-* permet :
+* Doc et site : https://docs.traefik.io/
+
+<br>
+* RP permet :
 		* filtrage
 		* enrichissement
 		* chiffrement (tls)
@@ -19,14 +22,20 @@
 <br>
 * traefik > langage GO
 
+* édité par containous (Fr > Emile Vauge)
+
 <br>
 * traefik, sa force ?
-		* discovery
+		* discovery > providers (consul, docker, fichiers...)
 		* échange direct avec let's encrypt (tls)
+
+--------------------------------------------------------------------------
+
+# TRAEFIK : Introduction
 
 <br>
 * différentes couches
-		* http > osi 7 (appicative)
+		* http > osi 7 (applicative)
 		* tcp > osi 4 (transport)
 		* udp > osi 4 (transport)
 
@@ -34,12 +43,14 @@
 * traefik :
 		* interface graphique
 		* exposition de métriques (prometheus routes...)
-		* discovery et mise à jour à chaud (ex : swarm)
+		* enregistrement du tracing (opentracing > jaeger)
+		* discovery et mise à jour à chaud (ex : swarm...)
 
 <br>
 * installation :
-		* via docker : la plus répandu
+		* via container (docker) : la plus répandu
 		* via binaire
 
 <br>
 * configurations : toml ou yaml
+		* Tom's Obvious, Minimal Language
