@@ -23,6 +23,10 @@ mv traefik /usr/local/bin
 chmod 755 /usr/local/bin/traefik
 ```
 
+------------------------------------------------------------------------
+
+# TRAEFIK : Installation via binaire
+
 <br>
 * configuration (juste dashboard)
 
@@ -39,10 +43,23 @@ traefik --accesslog=true \
 ```
 
 <br>
-* ex : fichier yaml 
+* ex : fichier toml
 
 ```
-traefik --configFile=config.yml
+[accesslog]
+[api]
+  insecure=true
+  dashboard=true
+  debug=true
+[log]
+  level="INFO"
+[entryPoints]
+  [entryPoints.web]
+    address=":80"
+```
+
+```
+traefik --configFile=config.toml
 ```
 
 <br>

@@ -1,0 +1,20 @@
+[http]
+  [http.routers]
+    [http.routers.xavki_route]
+      entryPoints = ["xavki_secure"]
+      service = "xavki"
+      rule = "Host(`xavki.fr`) && Path(`/`)"
+      middlewares = ["xavki_https"]
+      [http.routers.xavki_route.tls]
+        certResolver = "xavki_certs"
+  [http.middlewares]
+    [http.middlewares.xavki_https.redirectScheme]
+       scheme = "https"
+       permanent = true
+
+  [http.services]
+    [http.services.xavki]
+      [http.services.xavki.loadBalancer]
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8081"
+

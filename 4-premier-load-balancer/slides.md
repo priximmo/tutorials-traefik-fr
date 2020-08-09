@@ -35,6 +35,11 @@ python3 -m http.server 8082
   watch = true
 ```
 
+--------------------------------------------------------------------------------
+
+# TRAEFIK : Premier Load Balancer
+
+
 <br>
 * traitement du service
 

@@ -1,0 +1,28 @@
+[accesslog]
+[api]
+  insecure=true
+  dashboard=true
+  debug=true
+[log]
+  level="INFO"
+[entryPoints]
+  [entryPoints.xavki]
+    address=":80"
+  [entryPoints.xavki_secure]
+    address=":443"
+
+
+[providers.file]
+  directory = "/home/oki/playground/traefik/services/"             
+  watch = true
+
+[certificatesResolvers]
+  [certificatesResolvers.xavki_certs]
+    [certificatesResolvers.xavki_certs.acme]
+      email = "moi@gmail.com"
+      caServer = "https://acme-v02.api.letsencrypt.org/directory"
+      storage = "acme.json"
+      keyType = "EC384"
+        [certificatesResolvers.xavki_certs.acme.httpChallenge]
+          entryPoint = "xavki"
+

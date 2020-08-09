@@ -1,0 +1,26 @@
+[http]
+  [http.routers]
+    [http.routers.xavki_route]
+      entryPoints = ["xavki"]
+      service = "xavki"
+      rule = "Path(`/`)"
+      middlewares = ["xavki"]
+    [http.routers.api]
+      entryPoints = ["api"]
+      service = "api@internal"
+      rule = "PathPrefix(`/api`)||PathPrefix(`/dashboard`)"
+      middlewares = ["xavki"]
+  [http.middlewares]
+    [http.middlewares.xavki.basicAuth]
+      users = [
+      "xavki:$2y$05$L6tUGpt4aes2CVkWwoAOROx5ZIwUWO9bmdUPOAR5GqMszx4RcKAPy", 
+      "xavki2:$2y$05$L6tUGpt4aes2CVkWwoAOROx5ZIwUWO9bmdUPOAR5GqMszx4RcKAPy",
+      ]
+
+  [http.services]
+    [http.services.xavki]
+      [http.services.xavki.loadBalancer]
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8081"
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8082"
