@@ -1,0 +1,5 @@
+      - traefik.http.routers.my-container.rule=Host(`example.com`)
+      - traefik.http.routers.my-container.middlewares=test-replacepathregex
+      - "traefik.http.middlewares.test-replacepathregex.replacepathregex.regex=^/toto/(.*)"
+      - "traefik.http.middlewares.test-replacepathregex.replacepathregex.replacement=/tata/$$1"
+      # "- "traefik.http.middlewares.test-redirectregex.redirectregex.permanent=true"
