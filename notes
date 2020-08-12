@@ -3,3 +3,67 @@
       - "traefik.http.middlewares.test-replacepathregex.replacepathregex.regex=^/toto/(.*)"
       - "traefik.http.middlewares.test-replacepathregex.replacepathregex.replacement=/tata/$$1"
       # "- "traefik.http.middlewares.test-redirectregex.redirectregex.permanent=true"
+
+
+- compression
+
+- hsts
+
+- 
+
+  middlewares:
+    security:
+      headers:
+        accessControlMaxAge: 100
+        addVaryHeader: true
+        browserXssFilter: true
+        contentTypeNosniff: true
+        frameDeny: true
+        sslRedirect: true
+        customFrameOptionsValue: "SAMEORIGIN"
+        referrerPolicy: "same-origin"
+        featurePolicy: "vibrate 'self'"
+
+-
+
+[providers.docker]
+  endpoint = "unix:///var/run/docker.sock"
+  watch = true
+  [docker.tls]
+    cert = "/etc/certs/local-cert.pem"
+    key = "/etc/certs/local-key.pem"
+
+
+- "traefik.docker.network=traefik-net"
+
+- "traefik.http.services.traefik-service.loadbalancer.server.port=8080"
+
+
+--
+
+[providers.docker]
+  exposedByDefault = false
+
+[providers.docker]
+  network = "test"
+
+
+--
+
+[providers.docker]
+  defaultRule = "Host(`{{ .Name }}.{{ index .Labels \"customLabel\"}}`)"
+
+--
+
+    chevrotin = 2.2.X
+    cantal = 2.1.X
+    maroilles = 1.7.X
+
+
+--
+
+traefik docker
+
+--
+
+
