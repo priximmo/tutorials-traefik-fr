@@ -1,0 +1,12 @@
+[http]
+  [http.routers]
+    [http.routers.xavki_route]
+      entryPoints = ["xavki"]
+      service = "xavki"
+      rule = "Path(`/`)"
+
+  [http.services]
+    [http.services.xavki]
+      [http.services.xavki.loadBalancer]
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8081"
