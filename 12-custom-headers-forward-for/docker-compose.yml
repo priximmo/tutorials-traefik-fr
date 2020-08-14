@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  my-container:
+    image: containous/whoami
+    container_name: whoami
+    ports:
+    - 192.168.13.11:80:80
+    labels:
+      - traefik.http.routers.my-container.rule=Host(`example.com`) || Path(`/example/`)
+      - traefik.http.middlewares.myheaders.headers.customRequestHeaders.X-requestheader="toto"
+      - traefik.http.middlewares.myheaders.headers.customResponseHeaders.X-responseheader="toto"
+

@@ -44,3 +44,4 @@ services:
       - traefik.http.routers.my-container.rule=Host(`example.com`) || Path(`/example/`)
 ```
 
+sticky session

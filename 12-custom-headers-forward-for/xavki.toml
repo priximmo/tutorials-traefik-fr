@@ -1,0 +1,20 @@
+[http]
+  [http.routers]
+    [http.routers.xavki_route]
+      entryPoints = ["xavki"]
+      service = "xavki"
+      rule = "Path(`/`)"
+      middlewares = ["testHeader"]
+
+[http.middlewares]
+  [http.middlewares.testHeader.headers]
+    [http.middlewares.testHeader.headers.customRequestHeaders]
+        X-Script-Name = "test" # Adds
+        X-Custom-Request-Header = "hello"
+
+  [http.services]
+    [http.services.xavki]
+      [http.services.xavki.loadBalancer]
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8081"
+

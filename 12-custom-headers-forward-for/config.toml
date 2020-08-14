@@ -1,0 +1,21 @@
+[accesslog]
+[api]
+  insecure=true
+  dashboard=true
+  debug=true
+[log]
+  level="INFO"
+[entryPoints]
+  [entryPoints.xavki]
+    address=":80"
+    [entryPoints.xavki.forwardedHeaders]
+      insecure = false
+      trustedIPs = ["127.0.0.1", "192.168.13.10"]
+[providers.file]
+  directory = "/home/vagrant/services/"             
+  watch = true
+
+[providers.docker]
+  endpoint = "ssh://vagrant@192.168.13.11:22"
+  useBindPortIP = true
+
