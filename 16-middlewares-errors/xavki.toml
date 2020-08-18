@@ -1,0 +1,23 @@
+[http]
+  [http.routers]
+    [http.routers.xavki_route]
+      entryPoints = ["xavki"]
+      service = "xavki"
+      rule = "PathPrefix(`/`)"
+      middlewares = ["xavki_errors"]
+[http.middlewares]
+  [http.middlewares.xavki_errors.errors]
+    status = ["400-599"]
+    service = "xavki_rescue"
+    query = "/"
+    #query = "/{status}.html"
+  [http.services]
+    [http.services.xavki]
+      [http.services.xavki.loadBalancer]
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8081"
+    [http.services.xavki_rescue]
+      [http.services.xavki_rescue.loadBalancer]
+        [[http.services.xavki_rescue.loadBalancer.servers]]
+          url = "http://127.0.0.1:8082"
+

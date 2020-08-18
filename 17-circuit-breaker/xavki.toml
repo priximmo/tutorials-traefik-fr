@@ -1,0 +1,16 @@
+[http]
+  [http.routers]
+    [http.routers.xavki_route]
+      entryPoints = ["xavki"]
+      service = "xavki"
+      rule = "PathPrefix(`/`)"
+      middlewares = ["xavki_circuitbreaker"]
+[http.middlewares]
+  [http.middlewares.xavki_latency.circuitBreaker]
+    expression = "LatencyAtQuantileMS(70.0) > 50"
+  [http.services]
+    [http.services.xavki]
+      [http.services.xavki.loadBalancer]
+        [[http.services.xavki.loadBalancer.servers]]
+          url = "http://127.0.0.1:8081"
+

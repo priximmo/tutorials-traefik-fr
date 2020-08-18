@@ -1,0 +1,14 @@
+[accesslog]
+[api]
+  insecure=true
+  dashboard=true
+  debug=true
+[log]
+  level="INFO"
+[entryPoints]
+  [entryPoints.xavki]
+    address=":80"
+[providers.file]
+  directory = "/home/vagrant/services/"             
+  watch = true
+
