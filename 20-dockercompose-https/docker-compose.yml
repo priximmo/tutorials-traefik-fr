@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:latest
+    volumes:
+      #- ${PWD}/config.toml:/etc/traefik/config.toml
+      - ${PWD}/certs/acme.json:/acme.json
+      - ${PWD}/conf.d:/etc/traefik/conf.d
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    command:
+      - "--global.sendAnonymousUsage"
+      - "--log.level=INFO"
+      - "--accesslog=true"
+      - "--api.insecure=true"
+      - "--api=true"
+      - "--api.dashboard=true"
+      - "--providers.file.directory=/etc/traefik/conf.d/"
+      - "--providers.file.watch=true"
+      - "--entrypoints.xavki.address=:80"
+      - "--entrypoints.xavki_secure.address=:443"
+      - "--entrypoints.xavki.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.xavki.http.redirections.entrypoint.to=xavki_secure"
+      - "--certificatesresolvers.xavki_certs.acme.email=x@moi.fr"
+      - "--certificatesresolvers.xavki_certs.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.xavki_certs.acme.storage=/acme.json"
+      - "--certificatesresolvers.xavki_certs.acme.keytype=RSA4096"
+      - "--certificatesresolvers.xavki_certs.acme.httpchallenge.entrypoint=xavki"
+      - "--certificatesresolvers.xavki_certs.acme.httpchallenge=true"
