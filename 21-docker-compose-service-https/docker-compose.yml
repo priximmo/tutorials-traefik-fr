@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:latest
+    volumes:
+      #- ${PWD}/config.toml:/etc/traefik/config.toml
+      - ./certs/acme.json:/acme.json
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    command:
+      - "--global.sendAnonymousUsage"
+      - "--log.level=INFO"
+      - "--api.insecure=true"
+      - "--api=true"
+      - "--api.dashboard=true"
+      - "--providers.docker.endpoint=unix:///var/run/docker.sock"
+      - "--entrypoints.xavki.address=:80"
+      - "--entrypoints.xavki_secure.address=:443"
+      - "--entrypoints.xavki.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.to=xavki_secure"
+      - "--certificatesresolvers.xavki_certs.acme.email=x@moi.fr"
+      - "--certificatesresolvers.xavki_certs.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.xavki_certs.acme.storage=/acme.json"
+      - "--certificatesresolvers.xavki_certs.acme.keytype=RSA4096"
+      - "--certificatesresolvers.xavki_certs.acme.httpchallenge.entrypoint=xavki"
+      - "--certificatesresolvers.xavki_certs.acme.httpchallenge=true"
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+    - 80
+    depends_on: 
+    - traefik
+    labels:
+      traefik.enable: true
+      traefik.http.routers.nginxwp-https.entrypoints: xavki_secure
+      traefik.http.routers.nginxwp-https.rule: Host(`xavki.fr`)
+      traefik.http.routers.nginxwp-https.tls: true
+      traefik.http.routers.nginxwp-https.tls.certresolver: xavki_certs
