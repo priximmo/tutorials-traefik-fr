@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * installation en binaire
 
 Doc : https://docs.traefik.io/providers/overview/
@@ -28,9 +30,13 @@ chmod 755 /usr/local/bin/traefik
 # TRAEFIK : Installation via binaire
 
 <br>
+
+
 * configuration (juste dashboard)
 
 <br>
+
+
 * ex : cli
 
 ```
@@ -43,6 +49,8 @@ traefik --accesslog=true \
 ```
 
 <br>
+
+
 * ex : fichier toml
 
 ```
@@ -63,6 +71,8 @@ traefik --configFile=config.toml
 ```
 
 <br>
+
+
 * test
 
 ```

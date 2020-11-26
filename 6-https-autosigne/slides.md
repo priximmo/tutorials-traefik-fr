@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * redirection simple
 
 ```
@@ -20,6 +22,8 @@
 ```
 
 <br>
+
+
 * redirection https
 
 ```
@@ -38,6 +42,8 @@
 # TRAEFIK : HTTPS autosigné
 
 <br>
+
+
 * mise en place du certificat autosigné
 
 ```
@@ -45,6 +51,8 @@ openssl req -x509 -newkey rsa:2048 -keyout xavki.key -out xavki.crt -days 365 -n
 ```
 
 <br>
+
+
 * configuration du certificat
 
 ```
@@ -54,6 +62,7 @@ openssl req -x509 -newkey rsa:2048 -keyout xavki.key -out xavki.crt -days 365 -n
       rule = "Path(`/`)"
       middlewares = ["xavki_https"]
       [http.routers.xavki_route.tls]
+        [[tls.certificates]]
         certFile = "certs/xavki.cert"
         keyFile = "certs/xavki.key"
   [http.middlewares]

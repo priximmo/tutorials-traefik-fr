@@ -6,11 +6,15 @@
 
 
 <br>
+
+
 * redirection https avec cert Let's Encrypt
 
 xavki.fr > dns > ip > box/pat > laptop > traefik > python/server
 
 <br>
+
+
 * créer un resolver : https://docs.traefik.io/https/acme/
 
 * type de challenge : tls, http, dns
@@ -34,6 +38,8 @@ Rq : http challenge
 # TRAEFIK : HTTPS && Let's Encrypt
 
 <br>
+
+
 * pour challenge http (pas de redirection du port 80
 
 ```
@@ -45,6 +51,8 @@ Rq : http challenge
 ```
 
 <br>
+
+
 * router > modification de la déclaration du certificat
 		* rule
 		* entrypoint

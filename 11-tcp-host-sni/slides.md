@@ -6,24 +6,36 @@
 
 
 <br>
+
+
 * documentation : https://docs.traefik.io/routing/routers/#configuring-tcp-routers
 
 <br>
+
+
 * 3 modes : HTTP / TCP / UDP
 
 <br>
+
+
 * TCP > sans manipuler les entêtes etc (TCP vs HTTP)
 
 <br>
+
+
 * TCP > load balancing transparent (ex : bases de données)
 
 <br>
+
+
 * possiblité de faire du passthrough (cf playlist haproxy) :
 		* client > traefik transparent > serveur tls
 		* à la différence de la vidéo https
 			* client > traefik tls > server sans tls
 
 <br>
+
+
 * pb TCP filtering > host header (HTTP)
 		* SNI > TLS permet d'utiliser le Host SNI > plusieurs services load balancés
 
@@ -33,6 +45,8 @@
 # TRAEFIK : Docker Provider - Routers Rules
 
 <br>
+
+
 * entrypoint (static configuration)
 
 ```
@@ -57,6 +71,8 @@ services:
 ```
 
 <br>
+
+
 * test
 
 ```

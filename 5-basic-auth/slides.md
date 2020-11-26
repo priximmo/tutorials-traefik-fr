@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 Doc : https://docs.traefik.io/middlewares/basicauth/
 
 * générer un hash MD5, SHA1, or BCrypt
@@ -21,6 +23,8 @@ htpasswd -nB xavki
 Rq : -B > bcrypt
 
 <br>
+
+
 * configuration
 
 ```
@@ -45,7 +49,11 @@ Rq : -B > bcrypt
 
 <br>
 
+
+
 <br>
+
+
 * secure api
 
 ```
@@ -64,6 +72,8 @@ Rq : -B > bcrypt
 ```
 
 <br>
+
+
 * settings du router
 
 ```

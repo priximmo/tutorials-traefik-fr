@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 Documentation : https://docs.traefik.io/middlewares/chain/
 
 * chain = enchainement et ordre des middlewares
@@ -17,6 +19,8 @@ htpasswd -nB xavki
 ```
 
 <br>
+
+
 * middleware d'authentification
 
 ```
@@ -29,6 +33,8 @@ htpasswd -nB xavki
 ```
 
 <br>
+
+
 * middleware de compress
 
 ```
@@ -36,6 +42,8 @@ htpasswd -nB xavki
 ```
 
 <br>
+
+
 * middleware de whitelisting
 
 ```
@@ -44,6 +52,8 @@ htpasswd -nB xavki
 ```
 
 <br>
+
+
 * création de la chaine
 
 ```

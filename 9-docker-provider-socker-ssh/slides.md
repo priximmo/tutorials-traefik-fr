@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * avec la socket unix local :
 
 ```
@@ -14,6 +16,8 @@
 ```
 
 <br>
+
+
 * via la socket ssh
 
 * création clef ssh et copie de la clef publique
@@ -30,6 +34,8 @@ Rq :
 ```
 
 <br>
+
+
 * utilisation via docker-compose (partie dynamique) :
 
 ```

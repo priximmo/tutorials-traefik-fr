@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * exemple 2 service minimalistes :
 
 ```
@@ -14,6 +16,8 @@ python3 -m http.server 8082
 ```
 
 <br>
+
+
 * configuration réduite :
 
 ```
@@ -41,6 +45,8 @@ python3 -m http.server 8082
 
 
 <br>
+
+
 * traitement du service
 
 ```

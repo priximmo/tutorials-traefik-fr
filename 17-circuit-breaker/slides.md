@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 Documentation : https://docs.traefik.io/middlewares/circuitbreaker/
 
 * circuitbreaker
@@ -14,6 +16,8 @@ Documentation : https://docs.traefik.io/middlewares/circuitbreaker/
 	Client > Traefik > Service A > Trigger > 503 ? 
 
 <br>
+
+
 * 3 triggers
 		* NetworkErrorRatio : 
 				NetworkErrorRatio() > 0.30
@@ -23,16 +27,22 @@ Documentation : https://docs.traefik.io/middlewares/circuitbreaker/
 				LatencyAtQuantileMS(50.0) > 100 
 
 <br>
+
+
 * combinaison avec des opérateurs : && ||
 		* et bien sûr : < > != == ...
 
 <br>
+
+
 * différents états
     * Close : fonctionne normalement
     * Open : sortie du service
     * Recovering : situation en cours de rétablissement
 
 <br>
+
+
 * complément
 		* un circuit breaker est évalué en sortie de chain
 		* un circuit breaker peut être utiliser par différents router

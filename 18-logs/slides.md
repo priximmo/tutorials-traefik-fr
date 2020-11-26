@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 Documentation : 
 	https://docs.traefik.io/observability/logs/
 	https://docs.traefik.io/observability/access-logs/
@@ -20,6 +22,8 @@ Documentation :
 * les fichiers sont relachés > logrotate possible
 
 <br>
+
+
 * logs :
 		* level (ERROR) : DEBUG, PANIC, FATAL, ERROR, WARN, INFO
 		* filePath : localisation
@@ -31,6 +35,8 @@ Documentation :
 
 
 <br>
+
+
 * access logs :
 		* filePath : localisation
 		* format (common) : common (Common Log Format ou CLF) / json

@@ -6,12 +6,18 @@
 
 
 <br>
+
+
 * documentation : https://docs.traefik.io/routing/routers/
 
 <br>
+
+
 Types de rule :
 
 <br>
+
+
 * clef du header
 
 ```
@@ -19,6 +25,8 @@ Headers(`key`, `value`)
 ```
 
 <br>
+
+
 * regex dans une clef du header
 
 ```
@@ -26,6 +34,8 @@ HeadersRegexp(`key`, `regexp`)
 ```
 
 <br>
+
+
 * le host header
 
 ```
@@ -40,6 +50,8 @@ HostHeader(`example.com`, ...)
 
 
 <br>
+
+
 * regex sur le host header
 
 ```
@@ -47,6 +59,8 @@ HostRegexp(`example.com`, `{subdomain:[a-z]+}.example.com`, ...)
 ```
 
 <br>
+
+
 * sélection par les méthodes
 
 ```
@@ -54,6 +68,8 @@ Method(`GET`, ...)
 ````
 
 <br>
+
+
 * sélection via le path (exact)
 
 ```
@@ -61,6 +77,8 @@ Path(`/path`, `/articles/{cat:[a-z]+}/{id:[0-9]+}`, ...)
 ```
 
 <br>
+
+
 * sélection via le pathprefix (partie du path)
 
 ```
@@ -68,6 +86,8 @@ PathPrefix(`/products/`, `/articles/{cat:[a-z]+}/{id:[0-9]+}`)
 ```
 
 <br>
+
+
 * requête via les paramètres
 
 ```

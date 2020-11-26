@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 Documentation : https://docs.traefik.io/middlewares/ipwhitelist/
 
 * white list
@@ -18,6 +20,8 @@ Documentation : https://docs.traefik.io/middlewares/ipwhitelist/
 ```
 
 <br>
+
+
 Documentation : https://docs.traefik.io/middlewares/compress/
 
 * compression

@@ -6,9 +6,13 @@
 
 
 <br>
+
+
 * multi providers
 
 <br>
+
+
 * avec la socket unix local :
 
 ```
@@ -17,6 +21,8 @@
 ```
 
 <br>
+
+
 * utilisation via docker-compose (partie dynamique) :
 
 ```
@@ -32,6 +38,8 @@ services:
 ```
 
 <br>
+
+
 * via la socket ssh
 
 * création clef ssh et copie de la clef publique

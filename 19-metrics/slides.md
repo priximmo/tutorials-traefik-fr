@@ -7,10 +7,14 @@
 
 
 <br>
+
+
 Documentation : 
 	https://docs.traefik.io/observability/metrics/overview/
 
 <br>
+
+
 * différents types :
 		* prometheus
 		* influxdb
@@ -18,6 +22,8 @@ Documentation :
 		* datadog
 
 <br>
+
+
 * influxdb
 
 ```
@@ -27,6 +33,8 @@ Documentation :
 ```
 
 <br>
+
+
 * prometheus
 
 ```
@@ -44,6 +52,8 @@ Sinon :   address = ":8082"
 
 
 <br>
+
+
 Options
 
 * addEntryPointsLabels = true

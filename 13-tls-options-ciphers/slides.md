@@ -6,11 +6,15 @@
 
 
 <br>
+
+
 Documentation :
 Blog utile : https://tferdinand.net/traefik-2-configuration-du-tls/
 Mozilla : https://ssl-config.mozilla.org/#server=traefik&version=2.3&config=intermediate&guideline=5.6
 
 <br>
+
+
 Checks : https://www.ssllabs.com/ssltest/analyze.html
 CLI :
 
@@ -20,6 +24,8 @@ openssl s_client -showcerts -connect xavki.fr:443 2>/dev/null | openssl x509 -te
 ```
 
 <br>
+
+
 * type et taille:
 
 ```
@@ -40,6 +46,8 @@ openssl s_client -showcerts -connect xavki.fr:443 2>/dev/null | openssl x509 -te
 
 
 <br>
+
+
 * ajout d'options
 
 ```
@@ -56,6 +64,8 @@ openssl s_client -showcerts -connect xavki.fr:443 2>/dev/null | openssl x509 -te
 ```
 
 <br>
+
+
 * version minimale de tls
 
 ```
@@ -78,6 +88,8 @@ openssl s_client -showcerts -connect xavki.fr:443 2>/dev/null | openssl x509 -te
 
 
 <br>
+
+
 * avec les ciphers
 
 ```
@@ -95,6 +107,8 @@ openssl s_client -showcerts -connect xavki.fr:443 2>/dev/null | openssl x509 -te
 ```
 
 <br>
+
+
 * en plus CAA : entrée DNS sépcifiant le fourniseur de certificat (CAA)
 
 
